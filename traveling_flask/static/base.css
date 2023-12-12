@@ -1,0 +1,54 @@
+body{
+    display:flex;
+    margin: 0;
+}
+#sidebar{
+    /* flex:1; */
+    
+    max-width:300px;
+    color:rgb(243, 236, 227);
+    background-color: rgb(134, 121, 104);
+    padding-right: 50px;
+    position: fixed;
+    top: 0; /* 固定在页面顶部 */
+    left: 0;
+    height: 100vh;
+    
+}
+#content{
+    /* flex:5; */
+    margin-top: 50px;
+    margin-left: 300px;
+    padding-left: 0px;
+}
+ul{
+    list-style-type: none;
+    /* text-decoration: none; */
+}
+li a{
+    text-decoration: none; /* 去掉下划线 */
+    color: inherit;  /*使用继承的颜色，保持默认文本颜色 */
+    /* color:aliceblue; */
+}
+li{
+    padding-bottom: 20px;
+}
+h1{
+    padding-bottom: 20px;
+}
+table{
+    padding: 0px;
+}
+th, td{
+    padding: 10px;
+}   
+td{
+    text-align: right;
+
+}
+/* .act{
+    padding-left: 20px;
+} */
+th:nth-child(4), td:nth-child(4) {
+    padding-left: 30px;
+}

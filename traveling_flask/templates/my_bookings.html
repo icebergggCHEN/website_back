@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookings</title>
+    <link rel="stylesheet" type="text/css" href="/static/base.css" />
+
+</head>
+<body>
+    <div id="sidebar">
+        <ul>
+            <li><a href="{{ url_for('index') }}">首頁</a></li>
+            <li><a href="{{ url_for('my_bookings') }}">我的預定</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1>My Bookings</h1>
+        
+        <p>Email: {{ email }}</p>
+        {% if bookings %}
+            <h3>{{ mes }}</h3>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Rooms</th>
+                    <th>Name</th>
+                    <th class="act">Actions</th>
+                </tr>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.date.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ booking.rooms }}</td>
+                    <td>{{ booking.name }}</td>
+                    <td class="act">
+                        <a href="{{ url_for('edit_booking', id=booking.id) }}">Edit</a>
+                        <a href="{{ url_for('cancel_booking', id=booking.id) }}">Cancel</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            
+        {% else %}
+            
+            <p>目前沒有訂房</p>
+        {% endif %} 
+    </div>
+</body>
+</html>
